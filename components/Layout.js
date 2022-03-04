@@ -59,7 +59,9 @@ export default function Layout(props) {
     return (
       <Button
         loading={loading || showWalletOptions}
-        onClick={() => setShowWalletOptions(true)}
+        onclick={() => {
+          setShowWalletOptions(true)
+        }}
       >
         Connect
       </Button>
@@ -86,6 +88,7 @@ export default function Layout(props) {
               NextJS wagmi
             </h4>
           </div>
+          {/* Connect button */}
           {renderButton()}
         </div>
       </div>

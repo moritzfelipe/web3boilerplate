@@ -13,7 +13,8 @@ export default function Button(props) {
       // {...rest}
       onClick={onclick}
     >
-      {children} {loading && <Loader size={5} />}
+      {children}
+      {/* {loading && <Loader size={5} />} */}
     </button>
   );
 }

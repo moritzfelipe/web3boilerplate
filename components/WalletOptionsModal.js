@@ -15,9 +15,9 @@ export default function WalletOptionsModal(props) {
     accountData && setOpen(false);
   }, [accountData, setOpen]);
 
-  console.log({open})
+  if (!open) return <></>;
 
-  return open ? (
+  return (
     <>
       <div className="fixed inset-0 z-50 flex items-center justify-center">
         <div className="relative w-auto max-w-3xl mx-auto my-6">
@@ -35,8 +35,7 @@ export default function WalletOptionsModal(props) {
                   loading={connectDataLoading}
                   width={80}
                   disabled={!c.ready}
-                  onclick = {() => connect(c)}
-                //   onClick={() => connect(c)}
+                  onclick={() => connect(c)}
                 >
                   <>
                     <div className="mr-3">
@@ -72,5 +71,5 @@ export default function WalletOptionsModal(props) {
       </div>
       <div className="fixed inset-0 z-40 bg-black opacity-25"></div>
     </>
-  ) : null;
+  );
 }

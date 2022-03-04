@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAccount, useBalance } from "wagmi";
-import { Button, Layout, Loader, WalletOptionsModal } from "../components"
+import { Button, Layout, Loader, WalletOptionsModal } from "../components";
 
 const Home = () => {
   const [showWalletOptions, setShowWalletOptions] = useState(false);
@@ -11,7 +11,6 @@ const Home = () => {
   });
 
   const loading = (accountLoading || balanceLoading) && !balanceData;
-
   const renderContent = () => {
     if (loading) return <Loader size={8} />;
     if (balanceData) {
@@ -26,7 +25,7 @@ const Home = () => {
         </>
       );
     }
-          }
+  };
 
   return (
     <>
